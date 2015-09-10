@@ -4,13 +4,8 @@ aldeed:autoform@5.4.1
 aldeed:collection2@2.3.3
 aldeed:simple-schema@1.3.3
 aldeed:tabular@1.2.0
-<<<<<<< HEAD
 amalthean:orion-lang-mk@1.3.0
 anti:i18n@0.4.3
-=======
-anti:i18n@0.4.3
-autopublish@1.0.3
->>>>>>> atika2k/master
 autoupdate@1.2.1
 base64@1.0.3
 binary-heap@1.0.3
@@ -18,8 +13,6 @@ blaze@2.1.2
 blaze-tools@1.0.3
 boilerplate-generator@1.0.3
 callback-hook@1.0.3
-<<<<<<< HEAD
-=======
 cfs:access-point@0.0.0
 cfs:base-package@0.0.30
 cfs:collection@0.0.1
@@ -37,7 +30,6 @@ cfs:storage-adapter@0.0.0
 cfs:tempstore@0.0.2
 cfs:upload-http@0.0.2
 cfs:worker@0.0.0
->>>>>>> atika2k/master
 check@1.0.5
 coffeescript@1.0.6
 dburles:collection-helpers@1.0.3
@@ -48,10 +40,6 @@ ejson@1.0.6
 email@1.0.6
 fastclick@1.0.3
 fortawesome:fontawesome@4.4.0
-<<<<<<< HEAD
-=======
-froala:editor@1.2.8
->>>>>>> atika2k/master
 geojson-utils@1.0.3
 html-tools@1.0.4
 htmljs@1.0.4
@@ -69,19 +57,12 @@ iron:url@1.0.9
 jquery@1.11.3_2
 json@1.0.3
 launch-screen@1.0.2
-<<<<<<< HEAD
-=======
 lc3t35:orion-filesystem-local@0.1.0
->>>>>>> atika2k/master
 less@1.0.14
 livedata@1.0.13
 localstorage@1.0.3
 logging@1.0.7
 matb33:collection-hooks@0.7.15
-<<<<<<< HEAD
-=======
-maxharris9:meteor-bootstrap-slider@0.9.0
->>>>>>> atika2k/master
 meteor@1.1.6
 meteor-platform@1.2.2
 meteorhacks:inject-initial@1.0.2
@@ -90,10 +71,7 @@ minimongo@1.0.8
 mobile-status-bar@1.0.3
 momentjs:moment@2.10.6
 mongo@1.1.0
-<<<<<<< HEAD
-=======
 mongo-livedata@1.0.8
->>>>>>> atika2k/master
 nemo64:bootstrap@3.3.5_2
 nemo64:bootstrap-data@3.3.5
 nicolaslopezj:options@1.0.1
@@ -111,19 +89,12 @@ orionjs:collections@1.4.6
 orionjs:config@1.4.0
 orionjs:core@1.4.0
 orionjs:dictionary@1.4.0
-<<<<<<< HEAD
-orionjs:filesystem@1.4.0
-orionjs:lang-en@1.4.0
-orionjs:summernote@1.4.0
-=======
 orionjs:file-attribute@1.4.0
 orionjs:filesystem@1.4.0
-orionjs:froala@1.4.0
 orionjs:image-attribute@1.4.3
 orionjs:lang-en@1.4.0
 orionjs:summernote@1.4.0
 raix:eventemitter@0.0.2
->>>>>>> atika2k/master
 random@1.0.3
 reactive-dict@1.1.0
 reactive-var@1.0.5
@@ -136,18 +107,11 @@ sha@1.0.3
 softwarerero:accounts-t9n@1.1.4
 spacebars@1.0.6
 spacebars-compiler@1.0.6
-<<<<<<< HEAD
 spectrum:photoswipe@1.0.0
-=======
->>>>>>> atika2k/master
 srp@1.0.3
 summernote:standalone@0.6.16
 templating@1.1.1
 tracker@1.0.7
-<<<<<<< HEAD
-=======
-twbs:bootstrap@3.3.5
->>>>>>> atika2k/master
 ui@1.0.6
 underscore@1.0.3
 url@1.0.4

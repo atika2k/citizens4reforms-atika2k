@@ -1,14 +1,17 @@
 Posts = new orion.collection('posts', {
-  singularName: 'post',
-  pluralName: 'posts',
+  singularName: orion.helpers.getTranslation('posts.singularName'), // The name of one of this items
+  pluralName: orion.helpers.getTranslation('posts.pluralName'), // The name of more than one of this items
+  title: 'Постови', // The title of the page
   link: {
-    title: 'Posts'
+    title: 'Постови'
+    /*orion.helpers.getTranslation('posts.title')*/
   },
+
   tabular: {
     columns: [
-      {data: 'title', title: 'Наслов'},
-      orion.attributeColumn('createdBy', 'createdBy', 'createdBy'),
-      orion.attributeColumn('createdAt', 'createdAt', 'createdAt')
+      { data: 'title', title:'Наслов' },
+      { data: 'createdBy', title:'Креатор' },
+      { data: 'createdAt', title:'Датум' },
     ]
   }
 });

@@ -57,6 +57,12 @@ Router.route('/aktivnosti', function () {
   name: 'aktivnosti'
 });
 
+Router.route('/aktivnost', function () {
+  this.render('aktivnost');
+},{
+  name: 'aktivnost'
+});
+
 Router.route('/gallery', function () {
   this.render('gallery');
 },{

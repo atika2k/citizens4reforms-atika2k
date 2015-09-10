@@ -5,11 +5,16 @@
 # but you can also edit it by hand.
 
 meteor-platform
+<<<<<<< HEAD
+=======
+autopublish
+>>>>>>> atika2k/master
 insecure
 nemo64:bootstrap
 less
 fortawesome:fontawesome
 iron:router
+<<<<<<< HEAD
 dburles:google-maps
 email
 spectrum:photoswipe
@@ -18,3 +23,17 @@ orionjs:core
 orionjs:summernote
 amalthean:orion-lang-mk
 orionjs:lang-en
+=======
+maxharris9:meteor-bootstrap-slider
+dburles:google-maps
+email
+orionjs:core
+twbs:bootstrap
+orionjs:bootstrap
+orionjs:summernote
+orionjs:froala
+orionjs:image-attribute
+orionjs:file-attribute
+orionjs:filesystem
+lc3t35:orion-filesystem-local
+>>>>>>> atika2k/master

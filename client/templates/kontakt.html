@@ -1,0 +1,78 @@
+       <template name="kontakt">
+        <!-- Page Title -->
+		<div class="section section-breadcrumbs">
+			<div class="container">
+				<div class="row">
+					<div class="col-md-12">
+						<h1>Контакт</h1>
+					</div>
+				</div>
+			</div>
+		</div>
+        
+        <div class="section">
+	    	<div class="container">
+	        	<div class="row">
+	        		<div class="col-sm-7">
+	        			<!-- Map -->
+	        			<div class="map-container">
+						    {{> googleMap name="exampleMap" options=exampleMapOptions}}
+						 </div>
+	        			
+	        			<!-- End Map -->
+	        			<!-- Contact Info -->
+	        			<p class="contact-us-details">
+	        				<b>Адреса:</b> МЦЕО - Мајаковски 2/4 1000, Скопје<br/>
+	        				<b>Телефон:</b> +389 (0)2 321 75 11 <br/>
+	        				<b>е-пошта:</b> <a href="mailto:mcet@mcet.org.mk">mcet@mcet.org.mk</a>
+	        			</p>
+	        			<!-- End Contact Info -->
+	        		</div>
+	        		<div class="col-sm-5">
+	        			<!-- Contact Form -->
+	        			<h3></h3>
+	        			<div class="contact-form-wrapper">
+		        			<form class="form-horizontal" role="form" >
+		        				 <div class="form-group">
+		        				 	<label for="Name" class="col-sm-3 control-label"><b>Име </b></label>
+		        				 	<div class="col-sm-9">
+										<input class="form-control" id="Name" type="text" placeholder="">
+									</div>
+								</div>
+								<div class="form-group">
+									<label for="contact-email" class="col-sm-3 control-label"><b>Е-пошта</b></label>
+									<div class="col-sm-9">
+										<input class="form-control" id="contact-email" type="text" placeholder="">
+									</div>
+								</div>
+								<div class="form-group">
+									<label for="contact-message" class="col-sm-3 control-label"><b>Избери тема</b></label>
+									<div class="col-sm-9">
+										<select class="form-control" id="prependedInput">
+											<option>Изберете тема...</option>
+											<option>Општо</option>
+											<option>Активности</option>
+											<option></option>
+										</select>
+									</div>
+								</div>
+								<div class="form-group">
+									<label for="contact-message" class="col-sm-3 control-label"><b>Порака</b></label>
+									<div class="col-sm-9">
+										<textarea class="form-control" rows="5" id="contact-message"></textarea>
+									</div>
+								</div>
+								<div class="form-group">
+									<div class="col-sm-12">
+									<button type="submit" class="btn pull-right">Прати</button>
+									</div>
+								</div>
+		        			</form>
+		        		</div>
+		        		<!-- End Contact Info -->
+	        		</div>
+	        	</div>
+	    	</div>
+	    </div>
+
+	    </template>

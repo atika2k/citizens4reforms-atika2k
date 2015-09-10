@@ -1,0 +1,55 @@
+<template name="navigation">
+<!-- Navigation & Logo-->
+<div class="mainmenu-wrapper">
+  <div class="container">
+    <nav id="mainmenu" class="mainmenu">
+      <ul>
+        <li class="logo-wrapper">
+          <a href="/"><img src="/citizens_logo_200x100_crop.png" alt="logo.png"></a>
+        </li>
+       <!--  <li class="{{activeLink 'doma'}}">
+          <a href="/">Дома</a>
+        </li> -->
+        <li class="{{activeLink 'zaOrganizacijata'}}">
+
+          <a href="/za-organizacijata">За нас</a>
+        </li>
+        <li class="{{activeLink 'zaProektot'}}">
+        <li class="dropdown">
+          
+          <a class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">ЗА ПРОЕКТОТ<span class="caret"></span></a>
+          
+          <ul class="dropdown-menu">
+          <br/>
+            <li><a href="/potrebi-problemi">Потреби и проблеми</a></li><br/>
+            <li role="separator" class="divider"></li><br/>
+            <li><a href="/misija">Мисија и краткорочни цели<br/></a></li><br/>
+            <li role="separator" class="divider"></li><br/>
+            <li><a href="/rezultati">Очекувани резултати</a></li><br/>
+            <li role="separator" class="divider"></li><br/>
+            <li><a href="/celna_grupa">Целна група и географска локација</a></li><br/>
+          </ul>
+        </li>
+          <!-- <a href="/za-proektot">За проектот</a> -->
+        </li>
+        <li class="{{activeLink 'materijali'}}">
+          <a href="/materijali">Материјали</a>
+        </li>
+        <li class="{{activeLink 'aktivnosti'}}">
+          <a href="/aktivnosti">Активности</a>
+        </li>
+        <li class="{{activeLink 'gallery'}}">
+          <a href="/gallery">Галерија</a>
+        </li>
+        <li class="{{activeLink 'media'}}">
+          <a href="/media">Во медиуми</a>
+        </li>
+        <li class="{{activeLink 'kontakt'}}">
+          <a href="/kontakt">Контакт</a>
+        </li>
+      </ul>
+    </nav>
+  </div>
+</div>
+</template>
+

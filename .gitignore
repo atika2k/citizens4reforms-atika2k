@@ -1,3 +1,5 @@
 .meteor/local
 .meteor/meteorite
 public/
+client/lib/custom.bootstrap.less
+client/lib/custom.bootstrap.mixins.import.less

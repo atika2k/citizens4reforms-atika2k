@@ -10,8 +10,8 @@ Posts = new orion.collection('posts', {
   tabular: {
     columns: [
       { data: 'title', title:'Наслов' },
-      { data: 'createdBy', title:'Креатор' },
-      { data: 'createdAt', title:'Датум' },
+      orion.attributeColumn('createdBy', 'createdBy', 'createdBy'),
+      orion.attributeColumn('createdAt', 'createdAt', 'createdAt')
     ]
   }
 });
@@ -41,7 +41,6 @@ Posts.attachSchema(new SimpleSchema({
   },
 
   createdBy: orion.attribute('createdBy'),
-
   createdAt: orion.attribute('createdAt')
 
 

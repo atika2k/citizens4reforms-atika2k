@@ -1,9 +1,9 @@
 Template.doma.onRendered(function () {
-  this.subscribe('posts');
+  this.subscribe('aktivnosti');
 });
 
 Template.doma.helpers({
   posts: function () {
-    return Posts.find({}, { sort: { createdAt: -1 } });
+    return Aktivnosti.find({}, { sort: { createdAt: -1 } });
   }
 });

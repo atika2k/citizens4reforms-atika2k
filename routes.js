@@ -1,12 +1,28 @@
 Router.configure({
   layoutTemplate: 'layout',
-  notFoundTemplate: 'notFound'
+  notFoundTemplate: 'notFound',
+  loadingTemplate: 'loading'
 });
 
 Router.route('/', function () {
   this.render('doma');
 }, {
   name: 'doma'
+});
+
+Router.route('/aktivnosti/:_id', function () {
+  this.wait(Meteor.subscribe('aktivnost', this.params._id));
+  if (this.ready()) {
+    this.render('aktivnost', {
+      data: function () {
+        return Aktivnosti.findOne({_id: this.params._id});
+      }
+    });
+  } else {
+    this.render('loading');
+  }
+},{
+  name: 'aktivnost'
 });
 
 Router.route('/za-organizacijata', function () {
@@ -55,12 +71,6 @@ Router.route('/aktivnosti', function () {
   this.render('aktivnosti');
 },{
   name: 'aktivnosti'
-});
-
-Router.route('/aktivnost', function () {
-  this.render('aktivnost');
-},{
-  name: 'aktivnost'
 });
 
 Router.route('/gallery', function () {

@@ -1,6 +1,12 @@
 <template name="gallery">
 <div class="container">
+    <div class="row">
+      {{# each images }}
+            {{> galleryImage }}
+      {{/each }}
+    </div>
   <div class="row">
+
     <button class="btn btn-default" id="gallery-btn">Open PhotoSwipe</button>
     <!-- Root element of PhotoSwipe. Must have class pswp. -->
     <div class="pswp" tabindex="-1" role="dialog" aria-hidden="true">

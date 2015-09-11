@@ -1,7 +1,7 @@
 Posts = new orion.collection('posts', {
-  singularName: orion.helpers.getTranslation('posts.singularName'), // The name of one of this items
-  pluralName: orion.helpers.getTranslation('posts.pluralName'), // The name of more than one of this items
-  title: 'Постови', // The title of the page
+  singularName: 'post', 
+  pluralName: 'posts',
+  title: 'Постови',
   link: {
     title: 'Постови'
     /*orion.helpers.getTranslation('posts.title')*/
@@ -11,7 +11,8 @@ Posts = new orion.collection('posts', {
     columns: [
       { data: 'title', title:'Наслов' },
       orion.attributeColumn('createdBy', 'createdBy', 'createdBy'),
-      orion.attributeColumn('createdAt', 'createdAt', 'createdAt')
+      orion.attributeColumn('createdAt', 'createdAt', 'createdAt'),
+      orion.attributeColumn('image', 'image', 'Image')
     ]
   }
 });
@@ -27,18 +28,26 @@ Posts.attachSchema(new SimpleSchema({
     type: String,
     label: 'Опис',
     optional: true,
-    max: 200
+    max: 200,
+    autoform: {
+      rows: 2
+    }
   },
 
   content: {
     type: String,
     label: 'Содржина',
     optional: false,
-    max: 1000,
+    max: 3000,
     autoform: {
       rows: 10
     }
   },
+
+  image: orion.attribute('image', {
+      label: 'Image',
+      optional: true
+  }),
 
   createdBy: orion.attribute('createdBy'),
   createdAt: orion.attribute('createdAt')

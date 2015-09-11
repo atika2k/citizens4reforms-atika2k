@@ -33,16 +33,10 @@ Aktivnosti.attachSchema(new SimpleSchema({
     }
   },
 
-  content: {
-    type: String,
-    label: 'Содржина',
-    optional: false,
-    max: 3000,
-    autoform: {
-      rows: 10
-    }
-  },
-
+  content: orion.attribute('summernote', {
+      label: 'Содржина'
+  }),
+  
   image: orion.attribute('image', {
       label: 'Слика',
       optional: true

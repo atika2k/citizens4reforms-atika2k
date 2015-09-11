@@ -1,23 +1,22 @@
-Posts = new orion.collection('posts', {
-  singularName: 'post', 
-  pluralName: 'posts',
-  title: 'Постови',
+Aktivnosti = new orion.collection('aktivnosti', {
+  singularName: 'activity' , 
+  pluralName: 'activities' ,
+  title: 'Активности',
   link: {
-    title: 'Постови'
-    /*orion.helpers.getTranslation('posts.title')*/
+    title: 'Активности'
   },
 
   tabular: {
     columns: [
       { data: 'title', title:'Наслов' },
-      orion.attributeColumn('createdBy', 'createdBy', 'createdBy'),
-      orion.attributeColumn('createdAt', 'createdAt', 'createdAt'),
-      orion.attributeColumn('image', 'image', 'Image')
+      orion.attributeColumn('createdBy', 'createdBy', 'Креирал:'),
+      orion.attributeColumn('createdAt', 'createdAt', 'Креирано:'),
+      orion.attributeColumn('image', 'image', 'Слика')
     ]
   }
 });
 
-Posts.attachSchema(new SimpleSchema({
+Aktivnosti.attachSchema(new SimpleSchema({
   title: {
     type: String,
     label: 'Наслов',
@@ -45,17 +44,18 @@ Posts.attachSchema(new SimpleSchema({
   },
 
   image: orion.attribute('image', {
-      label: 'Image',
+      label: 'Слика',
       optional: true
   }),
 
   createdBy: orion.attribute('createdBy'),
+  
   createdAt: orion.attribute('createdAt')
 
 
 }));
 
-Posts.helpers({
+Aktivnosti.helpers({
   getCreator: function () {
     return Meteor.users.findOne({ _id: this.createdBy });
   }

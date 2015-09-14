@@ -100,14 +100,14 @@ i18n.map('mk', {
   },
   collections: {
     create: {
-      title: 'Креирај {$1}'
+      title: 'Додај {$1}'
     },
     update: {
       title: 'Ажурирај {$1}'
     },
     delete: {
       title: 'Избриши {$1}',
-      confirmQuestion: 'Are you sure you wan\'t to delete this {$1}?'
+      confirmQuestion: 'Дали сте сигурни дека сакате да избришете {$1}?'
     },
     common: {
       defaultPluralName: 'предмети',
@@ -121,7 +121,7 @@ i18n.map('mk', {
   },
   dictionary: {
     update: {
-      title: 'Речник'
+      title: 'За проектот'
     }
   },
   filesystem: {

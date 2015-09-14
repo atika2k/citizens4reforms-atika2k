@@ -1,18 +1,18 @@
 DataFiles = new orion.collection('dataFiles', {
-
-  singularName: orion.helpers.getTranslation('dataFiles.singularName'), // The name of one of this items
-  pluralName: orion.helpers.getTranslation('dataFiles.pluralName'), // The name of more than one of this items
-  title: 'Материјали', // The title of the page
+  singularName: 'документ',
+  pluralName: 'документи',
+  title: 'Материјали',
   link: {
     title: 'Материјали'
-    /*orion.helpers.getTranslation('posts.title')*/
   },
 
   tabular: {
     columns: [
-      { data: 'title', title:'Тема' },
-      { data: 'category', title:'Категорија' },
-      { data: 'createdAt', title:'Датум' },
+      {data: 'title', title:'Наслов' },
+      {data: 'category', title: 'Опис'},
+      orion.attributeColumn('createdBy', 'createdBy', 'Креирал:'),
+      orion.attributeColumn('createdAt', 'createdAt', 'Креирано:'),
+      orion.attributeColumn('file', 'file', 'Документи')
     ]
   }
 });
@@ -20,20 +20,27 @@ DataFiles = new orion.collection('dataFiles', {
 DataFiles.attachSchema(new SimpleSchema({
   title: {
     type: String,
-    label: 'Наслов'
+    label: 'Наслов',
+    optional: true
   },
 
-  category: {
+  description: {
     type: String,
     label: 'Опис'
   },
+  createdAt: orion.attribute('createdAt'),
 
-  createdAt: orion.attribute('createdAt')
+  createdBy: orion.attribute('createdBy'),
+
+  file: orion.attribute('file', {
+    label: 'Документ',
+    optional: false
+  })
 }));
 
 
 DataFiles.helpers({
   getCreator: function () {
-    return Meteor.users.findOne({ _id: this.createdAt });
+    return Meteor.users.findOne({ _id: this.createdBy });
   }
 });

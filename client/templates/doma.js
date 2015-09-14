@@ -1,5 +1,5 @@
 Template.doma.onRendered(function () {
-  this.subscribe('aktivnosti');
+  this.subscribe('aktivnostiDoma');
 });
 
 Template.doma.helpers({

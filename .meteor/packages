@@ -16,10 +16,9 @@ spectrum:photoswipe
 orionjs:bootstrap
 orionjs:core
 orionjs:summernote
-amalthean:orion-lang-mk
-orionjs:lang-en
 orionjs:image-attribute
 orionjs:file-attribute
 orionjs:filesystem
-orionjs:froala
-brightbind:orion-gridfs
+msavin:mongol
+amalthean:orion-lang-mk
+vsivsi:orion-file-collection

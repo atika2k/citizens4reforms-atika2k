@@ -1,7 +1,7 @@
 Images = new orion.collection('images', {
 
-  singularName: 'image',
-  pluralName: 'images',
+  singularName: 'слика',
+  pluralName: 'слики',
   title: 'Галерија',
   link: {
     title: 'Галерија'

@@ -20,6 +20,7 @@ Aktivnosti.attachSchema(new SimpleSchema({
   title: {
     type: String,
     label: 'Наслов',
+    max: 50,
     optional: false
   },
 

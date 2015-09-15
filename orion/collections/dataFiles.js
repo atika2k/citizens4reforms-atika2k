@@ -21,12 +21,15 @@ DataFiles.attachSchema(new SimpleSchema({
   title: {
     type: String,
     label: 'Наслов',
-    optional: true
+    optional: false,
+    max: 50
   },
 
   description: {
     type: String,
-    label: 'Опис'
+    label: 'Опис',
+    optional: true,
+    max: 200
   },
   createdAt: orion.attribute('createdAt'),
 

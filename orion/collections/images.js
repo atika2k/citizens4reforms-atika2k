@@ -25,6 +25,13 @@ Images.attachSchema(new SimpleSchema({
     optional: false,
   },
 
+  category: {
+    type: String,
+    label: 'Категорија',
+    allowedValues: ['јавни дебати', 'обуки', 'работилници', 'настани', 'акции', 'конференции', 'општо' ],
+    optional: false
+  },
+
   eventAbout: {
     type: String,
     label: 'Настан',

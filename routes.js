@@ -1,6 +1,7 @@
 Router.configure({
   layoutTemplate: 'layout',
-  notFoundTemplate: 'notFound'
+  notFoundTemplate: 'notFound',
+  loadingTemplate: 'loading'
 });
 
 Router.route('/', function () {
@@ -8,6 +9,49 @@ Router.route('/', function () {
 }, {
   name: 'doma'
 });
+
+Router.route('/aktivnosti', function () {
+  this.render('aktivnosti');
+}, {
+  name: 'aktivnosti'
+});
+
+Router.route('/gallery', function () {
+  this.render('gallery');
+}, {
+  name: 'gallery'
+});
+
+Router.route('/aktivnosti/:_id', function () {
+  this.wait(Meteor.subscribe('aktivnost', this.params._id));
+  if (this.ready()) {
+    this.render('aktivnost', {
+      data: function () {
+        return Aktivnosti.findOne({_id: this.params._id});
+      }
+    });
+  } else {
+    this.render('loading');
+  }
+},{
+  name: 'aktivnost'
+});
+
+Router.route('/materijali/:_id', function () {
+  this.wait(Meteor.subscribe('dokument', this.params._id));
+  if(this.ready()){
+    this.render('dokument', {
+      data: function () {
+        return DataFiles.findOne({_id: this.params._id});
+      }
+    });
+  } else {
+    this.render('loading');
+  }
+},{
+  name: 'dokument'
+});
+
 
 Router.route('/za-organizacijata', function () {
   this.render('zaOrganizacijata');
@@ -51,17 +95,7 @@ Router.route('/materijali', function () {
   name: 'materijali'
 });
 
-Router.route('/aktivnosti', function () {
-  this.render('aktivnosti');
-},{
-  name: 'aktivnosti'
-});
 
-Router.route('/gallery', function () {
-  this.render('gallery');
-},{
-  name: 'gallery'
-});
 
 Router.route('/media', function () {
   this.render('media');

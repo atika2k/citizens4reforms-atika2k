@@ -1,57 +1,81 @@
-       <template name="aktivnosti">
-        <!-- Page Title -->
-		<div class="section section-breadcrumbs">
-			<div class="container">
-				<div class="row">
-					<div class="col-md-12">
-						<h1>Активности</h1>
-					</div>
-				</div>
-			</div>
-		</div>
-        
-        <div class="section">
-	        <div class="container">
-	        	<div class="row service-wrapper-row">
-        			<div class="col-sm-4">
-        				<div class="service-image">
-        					<img src="services1.jpg" alt="Service Name">
-        				</div>
-        			</div>
-        			<div class="col-sm-8">
-    					<h3>Активност 1</h3>
-    					<p class="text-justify">
-    						ЕУ, своето олеснување при решавањето на кризата ќе го врами на начин што ќе одговара на нејзините надлежности и мандат. Повеќе од извесно е дека ќе се создаде нова реформска рамка, по примерот на Пристапниот дијалог на високо ниво (ПДВН) од 2012 година, а која ќе се насочи на Поглавјата 23 (Правосудство и темелни пра) и 24 (Правда, слобода и безбедност). Македонија и граѓанскиот сектор имаа мешано искуство со ПДВН – иако замислен како инклузивен процес базиран на патоказ на реформи, ПДВН беше премногу формален механизам без суштински реформи.
-    					</p>
-    				</div>
-				</div>
-				<div class="row service-wrapper-row">
-        			<div class="col-sm-4">
-        				<div class="service-image">
-        					<img src="services2.jpg" alt="Service Name">
-        				</div>
-        			</div>
-        			<div class="col-sm-8">
-    					<h3>Активност 2</h3>
-    					<p class="text-justify">
-    						ЕУ, своето олеснување при решавањето на кризата ќе го врами на начин што ќе одговара на нејзините надлежности и мандат. Повеќе од извесно е дека ќе се создаде нова реформска рамка, по примерот на Пристапниот дијалог на високо ниво (ПДВН) од 2012 година, а која ќе се насочи на Поглавјата 23 (Правосудство и темелни пра) и 24 (Правда, слобода и безбедност). Македонија и граѓанскиот сектор имаа мешано искуство со ПДВН – иако замислен како инклузивен процес базиран на патоказ на реформи, ПДВН беше премногу формален механизам без суштински реформи.
-    					</p>
-    				</div>
-				</div>
-				<div class="row service-wrapper-row">
-        			<div class="col-sm-4">
-        				<div class="service-image">
-        					<img src="services3.jpg" alt="Service Name">
-        				</div>
-        			</div>
-        			<div class="col-sm-8">
-                    <!-- <div class="date">14 May 2013 </div> -->
-    					<h3>Активност 3</h3>
-    					<p class="text-justify">
-    						ЕУ, своето олеснување при решавањето на кризата ќе го врами на начин што ќе одговара на нејзините надлежности и мандат. Повеќе од извесно е дека ќе се создаде нова реформска рамка, по примерот на Пристапниот дијалог на високо ниво (ПДВН) од 2012 година, а која ќе се насочи на Поглавјата 23 (Правосудство и темелни пра) и 24 (Правда, слобода и безбедност). Македонија и граѓанскиот сектор имаа мешано искуство со ПДВН – иако замислен како инклузивен процес базиран на патоказ на реформи, ПДВН беше премногу формален механизам без суштински реформи. 
-    					</p>
-    				</div>
-				</div>
-	        </div>
-	    </div>
-        </template>
+<template name="aktivnosti">
+  <!-- Page Title -->
+  <div class="section section-breadcrumbs">
+    <div class="container">
+      <div class="row">
+        <div class="col-sm-12">
+          <h1>Активности</h1>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="section">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-offset-4 col-md-8 blog-sidebar">
+          <h4>Пребарај</h4>
+          <div class="input-group">
+            <span class="input-group-btn">
+              <button id="search-clear" class="btn" type="button"><i class="fa fa-remove"></i></button>
+            </span>
+            <input class="form-control input-md" placeholder="Пребарај по наслов" id="appendedInputButtons" type="text">
+            <span class="input-group-btn">
+              <button id="search-aktivnosti" class="btn" type="button">Пребарај&nbsp;&nbsp;<i class="fa fa-search"></i></button>
+            </span>
+          </div>
+        </div>
+      </div>
+      {{#each aktivnosti}}
+        <div class="row service-wrapper-row">
+          <div class="col-sm-4">
+            <div class="service-image">
+              <img src="{{image.url}}" alt="activity image missing :(">
+            </div>
+          </div>
+          <div class="col-sm-8">
+            <h3>{{title}}</h3>
+            <p class="text-justify">
+              {{description}}
+            </p>
+            <a class="btn btn-small pull-right" href="{{pathFor route='aktivnost'}}">Прикажи активност&nbsp;&nbsp;<i class="fa fa-pencil-square-o"></i></a>
+          </div>
+        </div>
+      {{/each}}
+    </div>
+  </div>
+
+  <div class="container text-center">
+    {{#if Template.subscriptionsReady }}
+      {{#if hasMoreAktivnosti}}
+        <button id="load-more-activities" class="btn btn-large btn-primary">
+          Прикажи повеќе&nbsp;&nbsp;<i class="fa fa-plus"></i>
+        </button>
+      {{/if}}
+    {{else}}
+      <div class="loading">
+        {{> spinner }}
+      </div>
+    {{/if}}
+  </div>
+</template>
+
+<!-- <h4>Последни постови</h4>
+<ul class="recent-posts">
+  <li><a href="#">Автократски практики на владеење</a></li>
+  <li><a href="#">Идејата на предложениот проект</a></li>
+  <li><a href="#">Појава на граѓански, протестни движења</a></li>
+  
+</ul>
+<h4>Категорија</h4>
+<ul class="blog-categories">
+  <li><a href="#">Активности</a></li>
+  <li><a href="#">Материјали</a></li>
+</ul>
+<h4>Архива</h4>
+<ul>
+  <li><a href="#">Јануар 2015</a></li>
+  <li><a href="#">Фебруар 2015</a></li>
+  <li><a href="#">Март 2015</a></li>
+  <li><a href="#">Април 2015</a></li>
+  <li><a href="#">Мај 2015</a></li>
+</ul> -->

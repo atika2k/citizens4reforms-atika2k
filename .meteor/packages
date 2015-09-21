@@ -16,5 +16,11 @@ spectrum:photoswipe
 orionjs:bootstrap
 orionjs:core
 orionjs:summernote
+orionjs:image-attribute
+orionjs:file-attribute
+orionjs:filesystem
+msavin:mongol
 amalthean:orion-lang-mk
-orionjs:lang-en
+vsivsi:orion-file-collection
+sacha:spin
+reactive-var

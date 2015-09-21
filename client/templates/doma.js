@@ -1,9 +1,26 @@
+var active = true;
+
+Template.doma.onCreated(function () {
+  this.subscribe('aktivnostiDoma');
+});
+
 Template.doma.onRendered(function () {
-  this.subscribe('posts');
+  this.$('.carousel').carousel({
+    interval: 3000
+  });
 });
 
 Template.doma.helpers({
-  posts: function () {
-    return Posts.find({}, { sort: { createdAt: -1 } });
+  aktivnosti: function () {
+    active = true;
+    return Aktivnosti.find({}, { sort: { createdAt: -1 } });
+  },
+  active: function () {
+    if(active){
+      active = false;
+      return 'active';
+    } else{
+      return '';
+    }
   }
 });

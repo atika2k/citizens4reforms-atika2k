@@ -1,8 +1,3 @@
-if(Meteor.isClient){
-  Session.setDefault('aktivnostiLimit', 5);
-  Session.setDefault('galleryLimit', 6);
-}
-
 Router.configure({
   layoutTemplate: 'layout',
   notFoundTemplate: 'notFound',
@@ -15,30 +10,16 @@ Router.route('/', function () {
   name: 'doma'
 });
 
-Router.route('/aktivnosti', {
-  name: 'aktivnosti',
-  subscriptions: function () {
-    return Meteor.subscribe('aktvnostiLazy', Session.get('aktivnostiLimit'));
-  },
-  action: function() {
-    this.render();
-    // Warning ... do not put else block with loading template here
-    // because it will reset the Session('aktivnostiLimit') variable
-    // and we will not subscribe to more items
-  }
+Router.route('/aktivnosti', function () {
+  this.render('aktivnosti');
+}, {
+  name: 'aktivnosti'
 });
 
-Router.route('/gallery', {
-  name : 'gallery',
-  subscriptions: function () {
-    return Meteor.subscribe('galleryLazy', Session.get('galleryLimit'));
-  },
-  action: function () {
-    this.render();
-    // Warning ... do not put else block with loading template here
-    // because it will reset the Session('galleryLimit') variable
-    // and we will not subscribe to more items
-  }
+Router.route('/gallery', function () {
+  this.render('gallery');
+}, {
+  name: 'gallery'
 });
 
 Router.route('/aktivnosti/:_id', function () {
@@ -54,6 +35,21 @@ Router.route('/aktivnosti/:_id', function () {
   }
 },{
   name: 'aktivnost'
+});
+
+Router.route('/materijali/:_id', function () {
+  this.wait(Meteor.subscribe('dokument', this.params._id));
+  if(this.ready()){
+    this.render('dokument', {
+      data: function () {
+        return DataFiles.findOne({_id: this.params._id});
+      }
+    });
+  } else {
+    this.render('loading');
+  }
+},{
+  name: 'dokument'
 });
 
 

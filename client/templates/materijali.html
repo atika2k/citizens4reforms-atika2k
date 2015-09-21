@@ -1,109 +1,68 @@
-        <template name="materijali">
+<template name="materijali">
 
-        <div class="section section-breadcrumbs">
-		    <div class="container">
-		      <div class="row">
-		        <div class="col-md-12">
-		          <h1>Материјали</h1>
-		        </div>
-		      </div>
-		    </div>
-		</div>
+  <div class="section section-breadcrumbs">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-12">
+          <h1>Материјали</h1>
+        </div>
+      </div>
+    </div>
+  </div>
 
-        <div class="section">
-	    	<div class="container">
-				<div class="row">
-					<div class="col-md-4 col-sm-6">
-						<div class="portfolio-item">
-							<div class="portfolio-image">
-								<a href="page-portfolio-item.html"><img src="img/portfolio1.jpg" alt="МЦЕО"></a>
-							</div>
-							<div class="portfolio-info">
-								<ul>
-									<li class="portfolio-project-name"></li>
-									<li>Документ:</li>
-									<li>Тема: </li>
-									<li class="read-more"><a href="page-portfolio-item.html" class="btn">Прочитај</a>  <a href="page-portfolio-item.html" class="btn">Преземи</a></li>
-								</ul>
-							</div>
-						</div>
-					</div>
-					<div class="col-md-4 col-sm-6">
-						<div class="portfolio-item">
-							<div class="portfolio-image">
-								<a href="page-portfolio-item.html"><img src="img/portfolio2.jpg" alt="МЦЕО"></a>
-							</div>
-							<div class="portfolio-info">
-								<ul>
-									<li class="portfolio-project-name"></li>
-									<li>Документ:</li>
-									<li>Тема: </li>
-									<li class="read-more"><a href="page-portfolio-item.html" class="btn">Прочитај</a>  <a href="page-portfolio-item.html" class="btn">Преземи</a></li>
-								</ul>
-							</div>
-						</div>
-					</div>
-					<div class="col-md-4 col-sm-6">
-						<div class="portfolio-item">
-							<div class="portfolio-image">
-								<a href="page-portfolio-item.html"><img src="img/portfolio3.jpg" alt="МЦЕО"></a>
-							</div>
-							<div class="portfolio-info">
-								<ul>
-									<li class="portfolio-project-name"></li>
-									<li>Документ:</li>
-									<li>Тема: </li>
-									<li class="read-more"><a href="page-portfolio-item.html" class="btn">Прочитај</a>  <a href="page-portfolio-item.html" class="btn">Преземи</a></li>
-								</ul>
-							</div>
-						</div>
-					</div>
-					<div class="col-md-4 col-sm-6">
-						<div class="portfolio-item">
-							<div class="portfolio-image">
-								<a href="page-portfolio-item.html"><img src="img/portfolio4.jpg" alt="МЦЕО"></a>
-							</div>
-							<div class="portfolio-info">
-								<ul>
-									<li class="portfolio-project-name"></li>
-									<li>Документ:</li>
-									<li>Тема: </li>
-									<li class="read-more"><a href="page-portfolio-item.html" class="btn">Прочитај</a>  <a href="page-portfolio-item.html" class="btn">Преземи</a></li>
-								</ul>
-							</div>
-						</div>
-					</div>
-					<div class="col-md-4 col-sm-6">
-						<div class="portfolio-item">
-							<div class="portfolio-image">
-								<a href="page-portfolio-item.html"><img src="img/portfolio5.jpg" alt="МЦЕО"></a>
-							</div>
-							<div class="portfolio-info">
-								<ul>
-									<li class="portfolio-project-name"></li>
-									<li>Документ:</li>
-									<li>Тема: </li>
-									<li class="read-more"><a href="page-portfolio-item.html" class="btn">Прочитај</a>  <a href="page-portfolio-item.html" class="btn">Преземи</a></li>
-								</ul>
-							</div>
-						</div>
-					</div>
-					<div class="col-md-4 col-sm-6">
-						<div class="portfolio-item">
-							<div class="portfolio-image">
-								<a href="page-portfolio-item.html"><img src="img/portfolio6.jpg" alt="МЦЕО"></a>
-							</div>
-							<div class="portfolio-info">
-								<ul>
-									<li class="portfolio-project-name"></li>
-									<li>Документ:</li>
-									<li>Тема: </li>
-									<li class="read-more"><a href="page-portfolio-item.html" class="btn">Прочитај</a>  <a href="page-portfolio-item.html" class="btn">Преземи</a></li>
-								</ul>
-							</div>
-						</div>
-					</div>
-				</div>
-			</div>
-		</div>
-		</template>
+  <div class="section">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-8 materijali-searchbar">
+          <div class="input-group">
+            <span class="input-group-btn">
+              <button id="search-clear" class="btn" type="button"><i class="fa fa-remove"></i></button>
+            </span>
+            <input class="form-control input-md" placeholder="Пребарај по документ" type="text">
+            <span class="input-group-btn">
+              <button id="search-materijali" class="btn" type="button">Пребарај&nbsp;&nbsp;<i class="fa fa-search"></i></button>
+            </span>
+          </div>
+        </div>
+      </div>
+      <div class="row">
+        {{# each materijali}}
+        <div class="col-md-4 col-sm-6">
+          <div class="portfolio-item">
+            <div class="portfolio-image">
+              <a href="page-portfolio-item.html"><img src="/book_128.png" alt="{{title}}"></a>
+            </div>
+            <div class="portfolio-info">
+              <ul>
+                <li class="portfolio-project-name">{{title}}</li>
+                <li class="portfolio-description text-justify"><strong>Тема:&nbsp;</strong>{{cutDescription this.description}}</li>
+                <li class="read-more">
+                  <a href="{{ pathFor route='dokument'}}"  class="btn btn-sm">
+                    Прочитај&nbsp;&nbsp;<i class="fa fa-file"></i>
+                  </a>
+                  <a href="{{file.url}}" download="{{title}}{{extension}}" target="_blank" class="btn btn-sm">
+                    Преземи&nbsp;&nbsp;<i class="fa fa-download"></i>
+                  </a>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+        {{/each}}
+      </div>
+    </div>
+    <div class="container text-center">
+      {{#if Template.subscriptionsReady }}
+        {{#if hasMoreMaterijali}}
+          <button id="load-more-materijali" class="btn btn-large btn-primary">
+              Прикажи повеќе&nbsp;&nbsp;<i class="fa fa-plus"></i>
+          </button>
+        {{/if}}
+      {{else}}
+        <div class="loading">
+          {{> spinner}}
+        </div>
+      {{/if}}
+    </div>
+  </div>
+</template>

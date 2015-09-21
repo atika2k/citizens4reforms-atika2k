@@ -28,7 +28,7 @@ Images.attachSchema(new SimpleSchema({
   category: {
     type: String,
     label: 'Категорија',
-    allowedValues: ['јавни дебати', 'обуки', 'работилници', 'настани', 'акции', 'конференции', 'општо' ],
+    allowedValues: ['Јавни дебати', 'Обуки', 'Работилници', 'Настани', 'Акции', 'Конференции', 'Општо' ],
     optional: false
   },
 
@@ -43,7 +43,7 @@ Images.attachSchema(new SimpleSchema({
   },
 
   image: orion.attribute('image', {
-      label: 'Слика',
+      label: 'Слики',
       optional: false
   }),
 

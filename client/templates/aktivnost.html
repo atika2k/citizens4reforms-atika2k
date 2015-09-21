@@ -1,71 +1,41 @@
 <template name="aktivnost">
-	   <div class="section section-breadcrumbs">
-			<div class="container">
-				<div class="row">
-					<div class="col-md-12">
-						<h1>Активност</h1>
-					</div>
-				</div>
-			</div>
-		</div>
+     <div class="section section-breadcrumbs">
+      <div class="container">
+        <div class="row">
+          <div class="col-xs-8">
+            <h1>
+              <a class="btn btn-xs" href="{{pathFor route='aktivnosti'}}"><i class="fa fa-arrow-left"></i></a>&nbsp;&nbsp;
+              Активност
+            </h1>
+          </div>
+        </div>
+      </div>
+    </div>
 
-		<div class="section">
-	    	<div class="container">
-				<div class="row">
-					<!-- Blog Post -->
-					<div class="col-sm-8">
-						<div class="blog-post blog-single-post">
-							<div class="single-post-title">
-								<h3>{{title}}</h3>
-							</div>
-							<div class="single-post-info">
-								<i class="fa fa-clock-o"></i>&nbsp;{{createdAt}}
-							</div>
-							<div class="single-post-image">
-								<img src="{{image.url}}" alt="no image :(">
-							</div>
-							<div class="single-post-content">
-								<h4>{{ description }}</h4>
-								<p>{{{ content }}}</p>
-							</div>
-						</div>
-					</div>
-					<!-- End Blog Post -->
-					<!-- Sidebar -->
-					<div class="col-sm-4 blog-sidebar">
-						<h4>Пребарај</h4>
-						<form>
-							<div class="input-group">
-								<input class="form-control input-md" id="appendedInputButtons" type="text">
-								<span class="input-group-btn">
-									<button class="btn btn-md" type="button">Пребарај</button>
-								</span>
-							</div>
-						</form>
-						<h4>Последни постови</h4>
-						<ul class="recent-posts">
-							<li><a href="#">Автократски практики на владеење</a></li>
-							<li><a href="#">Идејата на предложениот проект</a></li>
-							<li><a href="#">Појава на граѓански, протестни движења</a></li>
-							
-						</ul>
-						<h4>Категорија</h4>
-						<ul class="blog-categories">
-							<li><a href="#">Активности</a></li>
-							<li><a href="#">Материјали</a></li>
-						</ul>
-						<h4>Архива</h4>
-						<ul>
-							<li><a href="#">Јануар 2015</a></li>
-							<li><a href="#">Фебруар 2015</a></li>
-							<li><a href="#">Март 2015</a></li>
-							<li><a href="#">Април 2015</a></li>
-							<li><a href="#">Мај 2015</a></li>
-						</ul>
-					</div>
-					<!-- End Sidebar -->
-				</div>
-			</div>
-		</div>
-	</template>
-			
+    <div class="section">
+        <div class="container">
+        <div class="row">
+          <!-- Blog Post -->
+          <div class="col-md-offset-1 col-md-10">
+            <div class="blog-post blog-single-post">
+              <div class="single-post-title">
+                <h3>{{title}}</h3>
+              </div>
+              <div class="single-post-info">
+                <i class="fa fa-clock-o"></i>&nbsp;{{createdAt}}
+              </div>
+              <div class="single-post-image">
+                <img src="{{image.url}}" alt="no image :(">
+              </div>
+              <div class="single-post-content">
+                <h4>{{ description }}</h4>
+                <p>{{{ content }}}</p>
+              </div>
+            </div>
+          </div>
+          <!-- End Blog Post -->
+        </div>
+      </div>
+    </div>
+  </template>
+      

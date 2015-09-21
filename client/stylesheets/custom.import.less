@@ -4,168 +4,6 @@
   height: 350px;
 }
 
-.carousel-control {
-  position: absolute;
-  top: 0;
-  left: 0;
-  bottom: 0;
-  width: @carousel-control-width;
-  .opacity(@carousel-control-opacity);
-  font-size: @carousel-control-font-size;
-  color: @carousel-control-color;
-  text-align: center;
-  text-shadow: @carousel-text-shadow;
-  // We can't have this transition here because WebKit cancels the carousel
-  // animation if you trip this while in the middle of another animation.
-
-  // Set gradients for backgrounds
-  &.left {
-    #gradient > .horizontal(@start-color: rgba(0,0,0,.5); @end-color: rgba(0,0,0,.0001));
-  }
-  &.right {
-    left: auto;
-    right: 0;
-    #gradient > .horizontal(@start-color: rgba(0,0,0,.0001); @end-color: rgba(0,0,0,.5));
-  }
-
-  // Hover/focus state
-  &:hover,
-  &:focus {
-    outline: 0;
-    color: @carousel-control-color;
-    text-decoration: none;
-    .opacity(.9);
-  }
-
-  // Toggles
-  .icon-prev,
-  .icon-next,
-  .fa-arrow-left,
-  .fa-arrow-right {
-    position: absolute;
-    top: 50%;
-    margin-top: -10px;
-    z-index: 5;
-    display: inline-block;
-  }
-  .icon-prev,
-  .fa-arrow-left {
-    left: 50%;
-    margin-left: -10px;
-  }
-  .icon-next,
-  .fa-arrow-right {
-    right: 50%;
-    margin-right: -10px;
-  }
-  .icon-prev,
-  .icon-next {
-    width:  20px;
-    height: 20px;
-    line-height: 1;
-    font-family: serif;
-  }
-
-
-  .icon-prev {
-    &:before {
-      content: '\2039';// SINGLE LEFT-POINTING ANGLE QUOTATION MARK (U+2039)
-    }
-  }
-  .icon-next {
-    &:before {
-      content: '\203a';// SINGLE RIGHT-POINTING ANGLE QUOTATION MARK (U+203A)
-    }
-  }
-}
-
-.carousel-inner {
-  position: relative;
-  overflow: hidden;
-  width: 100%;
-
-  > .item {
-    display: none;
-    position: relative;
-    .transition(.6s ease-in-out left);
-
-    // Account for jankitude on images
-    > img,
-    > a > img {
-      &:extend(.img-responsive);
-      line-height: 1;
-    }
-
-    // WebKit CSS3 transforms for supported devices
-    @media all and (transform-3d), (-webkit-transform-3d) {
-      .transition-transform(~'0.6s ease-in-out');
-      .backface-visibility(~'hidden');
-      .perspective(1000px);
-
-      &.next,
-      &.active.right {
-        .translate3d(100%, 0, 0);
-        left: 0;
-      }
-      &.prev,
-      &.active.left {
-        .translate3d(-100%, 0, 0);
-        left: 0;
-      }
-      &.next.left,
-      &.prev.right,
-      &.active {
-        .translate3d(0, 0, 0);
-        left: 0;
-      }
-    }
-  }
-
-  > .active,
-  > .next,
-  > .prev {
-    display: block;
-  }
-
-  > .active {
-    left: 0;
-  }
-
-  > .next,
-  > .prev {
-    position: absolute;
-    top: 0;
-    width: 100%;
-  }
-
-  > .next {
-    left: 100%;
-  }
-  > .prev {
-    left: -100%;
-  }
-  > .next.left,
-  > .prev.right {
-    left: 0;
-  }
-
-  > .active.left {
-    left: -100%;
-  }
-  > .active.right {
-    left: 100%;
-  }
-
-}
-
-// Keep images from scaling beyond the width of their parents.
-.img-responsive(@display: block) {
-  display: @display;
-  max-width: 100%; // Part 1: Set a maximum relative to the parent
-  /* min-height: 480px; */
-  height: auto; // Part 2: Scale the height according to the width, otherwise you get stretching
-}
-
 .map-container {
   width: 800px;
   height: 400px;
@@ -186,4 +24,116 @@
   .thumbnail;
   background-color: transparent;
   border: none;
+}
+
+// Navbar customization ...
+
+@media (max-width: 767px){
+  .navigation-mobile {
+    padding-bottom: 60px;
+  }
+  #navigation{
+    display: none;
+  }
+  .nav > li {
+    border-bottom: 2px solid #4f8db3;
+  }
+  .navbar-header{
+    border-bottom: 3px solid #4f8db3;
+  }
+  .navbar-default .navbar-brand{
+    height: 60px;
+  }
+}
+@media (min-width: 768px){
+  .navigation-mobile{
+    display: none;
+  }
+}
+
+.carousel-img {
+  width: 100%
+}
+
+.posledni-postovi{
+  padding: 7px;
+}
+
+.loading{
+  position: relative;
+  height: 100px;
+  width: 100%;
+}
+
+.loading-doma{
+  position: relative;
+  height: 400px;
+  width: 100%;
+}
+
+
+.gallery-breadcrumb {
+  color: #FAFAFA;
+  font-size: 1.6em;
+  margin-bottom: 0;
+  text-transform: none;
+  margin-top: 0;
+  font-weight: 700;
+}
+
+.section-breadcrumbs-dd{
+  .section-breadcrumbs;
+  z-index: 1000;
+  position: relative;
+}
+
+
+// Materijali
+@media (min-width: @screen-sm-min) {
+  .portfolio-description{
+    min-height: 120px;
+  }
+}
+
+.materijali-searchbar{
+  padding-bottom: 25px;
+}
+
+// Gallery
+
+@media (max-width: @screen-xs-max) {
+  .thumb-img {
+    min-height: 150px;
+    max-height: 150px;
+  }
+}
+@media (min-width: @screen-sm-min) and (max-width: @screen-sm-max) {
+  .thumb-img {
+    min-height: 175px;
+    max-height: 175px;
+  }
+}
+@media (min-width: @screen-md-min) and (max-width: @screen-md-max) {
+  .thumb-img {
+    min-height: 210px;
+    max-height: 210px;
+  }
+}
+@media (min-width: @screen-lg-min) {
+  .thumb-img {
+    min-height: 210px;
+    max-height: 210px;
+  }
+}
+
+
+// Za Nas
+
+.thumb-mcet {
+  min-height: 180px;
+}
+
+.service-wrapper {
+  .service-wrapper;
+  min-height: 205px;
 }

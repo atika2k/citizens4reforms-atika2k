@@ -1,24 +1,49 @@
 <template name="gallery">
-<div class="section section-breadcrumbs">
-    <div class="container">
-      <div class="row">
-        <div class="col-md-12">
-          <h1>Галерија</h1>
-        </div>
-      </div>
+<div class="section section-breadcrumbs-dd">
+  <div class="container">
+    <span class="gallery-breadcrumb">Галерија&nbsp;&nbsp;</span>
+    <div class="btn-group">
+      <button type="button" class="btn">{{category}}</button>
+      <button type="button" class="btn dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+        <span class="caret"></span>
+        <span class="sr-only">Toggle Dropdown</span>
+      </button>
+      <ul class="dropdown-menu">
+        <li><a href="#"></a></li>
+        {{#each categories}}
+        <li><a class="category" href="#">{{this}}</a></li>
+        {{/each}}
+      </ul>
     </div>
+  </div>
 </div>
 <div class="container">
+  <div class="row">
   {{# each images}}
   <div class="col-xs-12 col-sm-6 col-md-4">
     <a id="{{_id}}" href="#" class="thumbnail">
-      <img src="{{image.url}}" alt="{{title}}">
+      <img class="thumb-img" src="{{image.url}}" alt="{{title}}">
     </a>
   </div>
   {{/each}}
+  </div>
 </div>
 <div class="container text-center">
-    <button id="load-more-images" class="btn btn-large btn-primary">Прикажи повеќе&nbsp;&nbsp;<i class="fa fa-plus"></i></button>
+    {{#if Template.subscriptionsReady }}
+        {{#if hasMoreImages}}
+        <button id="load-more-images" class="btn">
+            Прикажи повеќе&nbsp;&nbsp;<i class="fa fa-plus"></i>
+        </button>
+        {{else}}
+        <button id="reset-gallery" class="btn">
+            Ресетирај&nbsp;&nbsp;<i class="fa fa-remove"></i>
+        </button>
+        {{/if}}
+    {{else}}
+        <div class="loading">
+            {{> spinner }}
+        </div>
+    {{/if}}
 </div>
 <!-- Root element of PhotoSwipe. Must have class pswp. -->
 <div class="pswp" tabindex="-1" role="dialog" aria-hidden="true">

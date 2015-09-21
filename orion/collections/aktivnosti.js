@@ -39,8 +39,13 @@ Aktivnosti.attachSchema(new SimpleSchema({
   }),
   
   image: orion.attribute('image', {
-      label: 'Слика',
-      optional: true
+      label: 'Слика активности',
+      optional: false
+  }),
+
+  imageCarousel: orion.attribute('image', {
+    label: 'Слика насловна',
+    optional: false
   }),
 
   createdBy: orion.attribute('createdBy'),

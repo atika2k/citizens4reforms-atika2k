@@ -28,9 +28,20 @@ DataFiles.attachSchema(new SimpleSchema({
   description: {
     type: String,
     label: 'Опис',
-    optional: true,
-    max: 200
+    optional: false,
+    max: 500,
+    autoform: {
+      rows: 4
+    }
   },
+
+  extension: {
+    type: String,
+    label: 'Тип на документ (Внимавајте при изборот на типот на документ!)',
+    allowedValues: ['.pdf', '.docx', '.doc', '.odt', '.zip', '.rar'],
+    optional: false
+  },
+
   createdAt: orion.attribute('createdAt'),
 
   createdBy: orion.attribute('createdBy'),

@@ -14,6 +14,10 @@ orion.dictionary.addDefinition('Целна група',
   'Целна група',
   orion.attribute('summernote'));
 
+orion.dictionary.addDefinition('За нас',
+  'За нас',
+  orion.attribute('summernote'));
+
 orion.dictionary.addDefinition('', 'x', {
   type: Boolean,
   label: "Потврди!"
